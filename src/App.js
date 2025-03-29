@@ -1,14 +1,10 @@
 import React from "react";
-import SlidingPanel from "./ui/SlidingPanel";
+import GameLayout from "./ui/GameLayout";
 
-function App() {
+export default function App() {
   return (
       <div className="game">
-          <div className="main">
-              <SlidingPanel />
-          </div>
+          <GameLayout />
       </div>
-  );
+  )
 }
-
-export default App;

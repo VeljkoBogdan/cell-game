@@ -2,8 +2,8 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-body {
-    @apply bg-green-950
+* {
+    font-family: Inter, sans-serif;
 }
 
 .upgrade-button {
@@ -11,20 +11,4 @@ body {
     text-xl font-bold text-white
     border-green-500 rounded-xl border-4 bg-green-950
     hover:bg-green-500 transition
-}
-
-.sliding-panel {
-    height: 90vh;
-    width: 33%;
-    top: 5%;
-
-    @apply p-8 ml-12
-    fixed left-0
-    text-xl font-bold text-white
-    border-green-500 rounded-xl border-4 bg-green-900
-    border-l-0
-}
-
-.sliding-panel-flexbox {
-    @apply m-4 flex flex-col gap-4 flex-shrink;
 }

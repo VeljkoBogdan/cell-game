@@ -1,0 +1,83 @@
+/* Prevent scrolling */
+html, body {
+    @apply overflow-hidden;
+}
+
+/* Full-screen container */
+.game-container {
+    @apply h-screen w-screen flex flex-col overflow-hidden;
+}
+
+/* Main content: Sidebars + Game Area */
+.main-content {
+    @apply flex flex-grow overflow-hidden;
+}
+
+/* Left and Right Sidebars */
+.side-nav {
+    @apply w-[6%] text-white flex flex-col items-center p-2 gap-2 absolute top-0 bottom-0;
+}
+
+/* Left Navigation (Static, No Movement) */
+.left-nav {
+    @apply left-0;
+}
+
+/* Right Navigation (Static, No Movement) */
+.right-nav {
+    @apply right-0;
+}
+
+/* Game Screen */
+.game-screen {
+    @apply flex-grow flex-nowrap bg-green-950 flex items-center justify-center flex-col;
+}
+
+.game-title {
+    @apply text-xl font-bold;
+}
+
+/* Bottom Bar */
+.bottom-bar {
+    left: -5%;
+
+    @apply h-[5%] w-[110%] bg-gray-900 text-white flex justify-center items-center absolute bottom-0;
+}
+
+/* Side Navigation Buttons */
+.nav-button {
+    @apply w-[200%] h-20
+    text-sm font-bold text-white
+    border-green-700 rounded-2xl border-2 bg-green-950
+    hover:bg-green-700 transition duration-200;
+}
+
+/* Left Buttons Slide Out on Hover */
+.nav-button-left:hover {
+    @apply translate-x-3 ease-out;
+}
+
+.nav-button-left {
+    @apply text-end px-8
+}
+
+.nav-button-right {
+    @apply text-start px-8
+}
+
+/* Right Buttons Slide Out on Hover */
+.nav-button-right:hover {
+    @apply -translate-x-3 ease-out;
+}
+
+/* Bottom Tab Buttons */
+.tab-button {
+    border-width: 2px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+
+    @apply w-full h-full
+    text-sm font-bold text-white
+    border-green-700 border-b-0 bg-green-950
+    hover:bg-green-700 transition;
+}

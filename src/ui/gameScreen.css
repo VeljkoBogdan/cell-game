@@ -1,0 +1,26 @@
+.score-area {
+    border-width: 1px;
+    border-bottom-width: 0;
+    border-top-width: 0;
+
+    @apply h-[25%] w-[80%]
+    flex flex-grow
+    border-green-600
+}
+
+.resource-area {
+    border-width: 1px;
+    border-bottom-width: 0;
+    border-top-width: 0;
+
+    @apply h-[70%] w-[80%]
+    flex flex-grow
+    border-green-600
+}
+
+.line {
+    height: 1px;
+    border-bottom-width: 1px;
+
+    @apply w-[80%] border-green-600
+}
