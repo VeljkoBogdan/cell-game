@@ -3,18 +3,18 @@
     border-bottom-width: 0;
     border-top-width: 0;
 
-    @apply h-[25%] w-[80%]
-    flex flex-grow
+    @apply h-[25%] w-[80%] p-8
+    flex flex-grow flex-col
     border-green-600
 }
 
-.resource-area {
+.fragment-area {
     border-width: 1px;
     border-bottom-width: 0;
     border-top-width: 0;
 
-    @apply h-[70%] w-[80%]
-    flex flex-grow
+    @apply h-[70%] w-[80%] p-8
+    flex flex-grow flex-col
     border-green-600
 }
 
@@ -23,4 +23,26 @@
     border-bottom-width: 1px;
 
     @apply w-[80%] border-green-600
+}
+
+.cell-score {
+    @apply place-items-center
+    font-bold text-3xl
+}
+
+.cell-number-text {
+    @apply text-green-400
+    font-bold
+}
+
+.cell-production-text {
+    @apply text-green-800
+    font-normal
+    text-base
+}
+
+.production-text {
+    @apply text-green-600
+    font-normal
+    text-base
 }

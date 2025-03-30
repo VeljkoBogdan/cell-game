@@ -1,9 +1,15 @@
 import "./gameLayout.css";
-import React from "react";
+import React, {useEffect} from "react";
 import SideNavButton from "./SideNavButton";
 import GameScreen from "./GameScreen";
+import {startGameLoop} from "../core/GameState";
 
 export default function GameLayout() {
+    useEffect(() => {
+        // GAME START
+        startGameLoop()
+    }, []);
+
     return (
         <div className="game-container">
 
