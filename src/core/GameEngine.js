@@ -5,6 +5,7 @@ export class GameEngine {
             nutrients: 0,
             water: 10,
             oxygen: 0,
+            dna: 0,
             cells: 1,
 
             productionRates: {
@@ -12,6 +13,7 @@ export class GameEngine {
                 nutrients: 100,
                 water: 100,
                 oxygen: 100,
+                dna: 0,
                 cells: 0
             },
 
@@ -19,7 +21,8 @@ export class GameEngine {
                 energy: 1000,
                 nutrients: 1000,
                 water: 1000,
-                oxygen: 1000
+                oxygen: 1000,
+                dna: 10
             },
 
             upgradeCosts: {
@@ -32,6 +35,16 @@ export class GameEngine {
                     description: "Boosts energy production by x1.25",
                     cost: { energy: 25, nutrients: 25 },
                     effect: { energy: 1.25, type: "multiplicative" }
+                },
+                "vacuole": {
+                    description: "Increases water and nutrient production by x1.25",
+                    cost : { energy: 50, nutrients: 100, water: 100},
+                    effect: { water: 1.25, nutrients: 1.25, type: "multiplicative" }
+                },
+                "peroxisome": {
+                    "description": "Increases oxygen production by x1.25",
+                    cost: {energy:100, water: 50, nutrients: 75},
+                    effect: {oxygen: 1.25, type: "multiplicative"}
                 }
             },
 

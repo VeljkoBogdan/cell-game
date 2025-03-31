@@ -2,10 +2,12 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-* {
-    font-family: Inter, sans-serif;
+@layer base {
+    * {
+        font-family: Inter, sans-serif;
 
-    @apply text-white
+        @apply text-white
+    }
 }
 
 .upgrade-button {
@@ -65,7 +67,29 @@
 }
 
 .upgrade-fragment {
+    max-height: 95%;
+    overflow-y: auto;
+    overflow-x: hidden;
+
     @apply flex flex-row flex-grow w-full
+    border-s border-green-900
+}
+.upgrade-fragment::-webkit-scrollbar {
+    width: 8px;
+}
+.upgrade-fragment::-webkit-scrollbar-track {
+    width: 8px;
+    @apply bg-green-700
+    border-2 rounded-md border-green-100
+}
+.upgrade-fragment::-webkit-scrollbar-thumb {
+    width: 6px;
+    @apply bg-green-400
+    border-2 rounded-md border-green-100
+}
+.upgrade-fragment::-webkit-scrollbar-thumb:hover {
+    width: 10px;
+    @apply bg-green-500
 }
 
 .upgrade-description {
