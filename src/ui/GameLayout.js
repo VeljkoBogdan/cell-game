@@ -10,6 +10,8 @@ export default function GameLayout() {
     useEffect(() => {
         // GAME START
         startGameLoop()
+
+
     }, []);
 
     return (
@@ -19,7 +21,8 @@ export default function GameLayout() {
                 {/* Left Navigation */}
                 <div className="side-nav left-nav">
                     <SideNavButton side={"left"} onClick={() => setViewMode("main")}> Main </SideNavButton>
-                    <SideNavButton side={"left"} onClick={() => setViewMode("upgrades")}> Upgrades </SideNavButton>
+                    <SideNavButton side={"left"} onClick={() => setViewMode("upgrades")}> Organelles </SideNavButton>
+                    { <SideNavButton side={"left"} onClick={() => setViewMode("nucleus")}> Nucleus </SideNavButton> }
                 </div>
 
                 {/* Game Screen */}
@@ -27,8 +30,8 @@ export default function GameLayout() {
 
                 {/* Right Navigation */}
                 <div className="side-nav right-nav">
-                    <SideNavButton side={"right"}> Stats </SideNavButton>
-                    <SideNavButton side={"right"}> Settings </SideNavButton>
+                    <SideNavButton side={"right"} onClick={() => setViewMode("stats")}> Stats </SideNavButton>
+                    <SideNavButton side={"right"} onClick={() => setViewMode("settings")}> Settings </SideNavButton>
                 </div>
             </div>
 

@@ -35,6 +35,14 @@ export function upgradeResource(upgradeType) {
     }
 }
 
+export function canGetNucleus() {
+    return gameEngine.canGetNucleus();
+}
+
+export function getNucleus() {
+    gameEngine.getNucleus();
+}
+
 function notifySubscribers() {
     subscribers.forEach(callback => callback(gameEngine.getState()));
 }

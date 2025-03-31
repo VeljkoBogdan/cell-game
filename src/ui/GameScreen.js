@@ -22,6 +22,11 @@ export default function GameScreen({ viewMode }) {
             cells: 0
         },
 
+        flags: {
+            nucleus: false,
+            replication: false
+        },
+
         requirementsForNucleus: {
             energy: 1000,
             nutrients: 1000,

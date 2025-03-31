@@ -8,11 +8,16 @@ export class GameEngine {
             dna: 0,
             cells: 1,
 
+            flags: {
+                nucleus: false,
+                replication: false
+            },
+
             productionRates: {
-                energy: 0,
-                nutrients: 0,
-                water: 0,
-                oxygen: 0,
+                energy: 100,
+                nutrients: 100,
+                water: 100,
+                oxygen: 100,
                 dna: 0,
                 cells: 0
             },
@@ -109,5 +114,27 @@ export class GameEngine {
 
     getState() {
         return this.resources;
+    }
+
+    getNucleus() {
+        if (this.canGetNucleus()) {
+            this.resources.flags.nucleus = true;
+
+            this.resources.energy -= this.resources.requirementsForNucleus.energy;
+            this.resources.nutrients -= this.resources.requirementsForNucleus.nutrients;
+            this.resources.water -= this.resources.requirementsForNucleus.water;
+            this.resources.oxygen -= this.resources.requirementsForNucleus.oxygen;
+
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    canGetNucleus() {
+        return this.resources.energy >= this.resources.requirementsForNucleus.energy &&
+        this.resources.nutrients >= this.resources.requirementsForNucleus.nutrients &&
+        this.resources.water >= this.resources.requirementsForNucleus.water &&
+        this.resources.oxygen >= this.resources.requirementsForNucleus.oxygen;
     }
 }

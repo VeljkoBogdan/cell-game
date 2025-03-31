@@ -120,3 +120,13 @@
     @apply flex flex-col w-full
 }
 
+.get-nucleus-button {
+    @apply my-4 py-1 w-full
+    text-sm text-green-500
+    border-green-700 rounded-xl border-4 bg-green-900
+    hover:bg-green-700 transition
+}
+
+.get-nucleus-button:disabled {
+    @apply border-green-800 rounded-xl border-4 bg-green-950 transition-none
+}
