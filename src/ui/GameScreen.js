@@ -75,22 +75,42 @@ export default function GameScreen({ viewMode }) {
                 </div>
 
                 <div className="resource-list">
-                    <p className="energy-text">
-                        Energy: {resources.energy.toFixed(2)}{" "}
-                        <span className="production-text">({resources.productionRates.energy.toFixed(1)}/s)</span>
-                    </p>
-                    <p className="nutrients-text">
-                        Nutrients: {resources.nutrients.toFixed(2)}{" "}
-                        <span className="production-text">({resources.productionRates.nutrients.toFixed(1)}/s)</span>
-                    </p>
-                    <p className="water-text">
-                        Water: {resources.water.toFixed(2)}{" "}
-                        <span className="production-text">({resources.productionRates.water.toFixed(1)}/s)</span>
-                    </p>
-                    <p className="oxygen-text">
-                        Oxygen: {resources.oxygen.toFixed(2)}{" "}
-                        <span className="production-text">({resources.productionRates.oxygen.toFixed(1)}/s)</span>
-                    </p>
+                    { // Energy
+                        resources.productionRates.energy !== 0 ?
+                        <p className="energy-text">
+                            Energy: {resources.energy.toFixed(2)}{" "}
+                            <span className="production-text">({resources.productionRates.energy.toFixed(1)}/s)</span>
+                        </p>
+                        : null
+                    }
+
+                    { // Nutrients
+                        resources.productionRates.nutrients !== 0 ?
+                        <p className="nutrients-text">
+                            Nutrients: {resources.nutrients.toFixed(2)}{" "}
+                            <span className="production-text">({resources.productionRates.nutrients.toFixed(1)}/s)</span>
+                        </p>
+                        : null
+                    }
+
+
+                    { // Water
+                        resources.productionRates.water !== 0 ?
+                        <p className="water-text">
+                            Water: {resources.water.toFixed(2)}{" "}
+                            <span className="production-text">({resources.productionRates.water.toFixed(1)}/s)</span>
+                        </p>
+                        : null
+                    }
+
+                    { // Oxygen
+                        resources.productionRates.oxygen !== 0 ?
+                        <p className="oxygen-text">
+                            Oxygen: {resources.oxygen.toFixed(2)}{" "}
+                            <span className="production-text">({resources.productionRates.oxygen.toFixed(1)}/s)</span>
+                        </p>
+                        : null
+                    }
                 </div>
             </div>
 
