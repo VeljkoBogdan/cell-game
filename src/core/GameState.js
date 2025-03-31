@@ -1,6 +1,6 @@
 import {GameEngine} from "./GameEngine";
 
-const gameEngine = new GameEngine()
+const gameEngine = new GameEngine();
 const subscribers = new Set();
 
 export function subscribe(callback) {
@@ -8,23 +8,33 @@ export function subscribe(callback) {
 }
 
 export function unsubscribe(callback) {
-    subscribers.delete(callback)
+    subscribers.delete(callback);
 }
 
 export function startGameLoop() {
     let lastTime = performance.now();
 
     function loop() {
-        const now = performance.now()
+        const now = performance.now();
         const delta = (now - lastTime) / 2000;
         lastTime = now;
 
-        gameEngine.tick(delta)
+        gameEngine.tick(delta);
 
-        subscribers.forEach(callback => callback(gameEngine.getState()))
+        notifySubscribers();
 
-        requestAnimationFrame(loop)
+        requestAnimationFrame(loop);
     }
 
-    requestAnimationFrame(loop)
+    requestAnimationFrame(loop);
+}
+
+export function upgradeResource(upgradeType) {
+    if (gameEngine.upgradeResource(upgradeType)) {
+        notifySubscribers();
+    }
+}
+
+function notifySubscribers() {
+    subscribers.forEach(callback => callback(gameEngine.getState()));
 }

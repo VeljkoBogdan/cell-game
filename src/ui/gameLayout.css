@@ -5,7 +5,7 @@ html, body {
 
 /* Full-screen container */
 .game-container {
-    @apply h-screen w-screen flex flex-col overflow-hidden;
+    @apply h-screen w-screen flex flex-col;
 }
 
 /* Main content: Sidebars + Game Area */
@@ -30,7 +30,7 @@ html, body {
 
 /* Game Screen */
 .game-screen {
-    @apply flex-grow flex-nowrap bg-green-950 flex items-center justify-center flex-col;
+    @apply flex flex-grow flex-nowrap h-full w-full bg-green-950 justify-center place-items-center flex-col;
 }
 
 .game-title {

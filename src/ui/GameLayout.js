@@ -1,10 +1,12 @@
 import "./gameLayout.css";
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import SideNavButton from "./SideNavButton";
 import GameScreen from "./GameScreen";
 import {startGameLoop} from "../core/GameState";
 
 export default function GameLayout() {
+    const [viewMode, setViewMode] = useState("main");
+
     useEffect(() => {
         // GAME START
         startGameLoop()
@@ -12,18 +14,16 @@ export default function GameLayout() {
 
     return (
         <div className="game-container">
-
-            {/* Main Content (Game + Sidebars) */}
             <div className="main-content">
 
                 {/* Left Navigation */}
                 <div className="side-nav left-nav">
-                    <SideNavButton side={"left"}> Main </SideNavButton>
-                    <SideNavButton side={"left"}> Upgrades </SideNavButton>
+                    <SideNavButton side={"left"} onClick={() => setViewMode("main")}> Main </SideNavButton>
+                    <SideNavButton side={"left"} onClick={() => setViewMode("upgrades")}> Upgrades </SideNavButton>
                 </div>
 
-                {/* Game Screen (Center) */}
-                <GameScreen />
+                {/* Game Screen */}
+                <GameScreen viewMode={viewMode} />
 
                 {/* Right Navigation */}
                 <div className="side-nav right-nav">
@@ -34,8 +34,7 @@ export default function GameLayout() {
 
             {/* Bottom Tab Bar */}
             <div className="bottom-bar">
-                <button className="tab-button">Tab 1</button>
-                <button className="tab-button">Tab 2</button>
+                <button className="tab-button">Cell</button>
             </div>
 
         </div>
