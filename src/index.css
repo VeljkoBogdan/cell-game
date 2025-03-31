@@ -37,6 +37,12 @@
     @apply text-cyan-300 font-bold
 }
 
+.dna-text {
+    text-shadow: 0 0 5px rgb(130, 65, 200), 0 0 10px rgb(100, 40, 160);
+
+    @apply text-purple-400 font-extrabold
+}
+
 .progress-bar-bg {
     @apply bg-green-600
 }
@@ -54,6 +60,12 @@
     @apply absolute
     p-1 text-sm rounded-lg font-bold
     bg-green-800 border border-green-300
+}
+
+.nucleus-progress-area {
+    width: 20%;
+
+    @apply flex flex-col
 }
 
 .replication-progress-area {
@@ -103,3 +115,8 @@
 
     @apply text-green-300
 }
+
+.progress-area {
+    @apply flex flex-col w-full
+}
+

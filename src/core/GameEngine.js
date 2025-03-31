@@ -2,33 +2,40 @@ export class GameEngine {
     constructor() {
         this.resources = {
             energy: 10,
-            nutrients: 0,
+            nutrients: 10,
             water: 10,
-            oxygen: 0,
+            oxygen: 10,
             dna: 0,
             cells: 1,
 
             productionRates: {
-                energy: 100,
-                nutrients: 100,
-                water: 100,
-                oxygen: 100,
+                energy: 0,
+                nutrients: 0,
+                water: 0,
+                oxygen: 0,
                 dna: 0,
                 cells: 0
             },
 
-            requirementsForReplication: {
+            requirementsForNucleus: {
                 energy: 1000,
                 nutrients: 1000,
                 water: 1000,
-                oxygen: 1000,
+                oxygen: 1000
+            },
+
+            requirementsForReplication: {
+                energy: 1000 * 1000,
+                nutrients: 1000 * 1000,
+                water: 1000 * 1000,
+                oxygen: 1000 * 1000,
                 dna: 10
             },
 
             upgradeCosts: {
                 "cytoplasm": {
                     description: "Increases all resource production by +1",
-                    cost: { energy: 10, water: 10 },
+                    cost: { energy: 10, water: 10, nutrients: 10, oxygen: 10 },
                     effect: { energy: 1, nutrients: 1, water: 1, oxygen: 1, type: "additive" }
                 },
                 "mitochondria": {
@@ -57,6 +64,7 @@ export class GameEngine {
         this.resources.nutrients += this.resources.productionRates.nutrients * delta;
         this.resources.water += this.resources.productionRates.water * delta;
         this.resources.oxygen += this.resources.productionRates.oxygen * delta;
+        this.resources.dna += this.resources.productionRates.dna * delta;
     }
 
     upgradeResource(upgradeType) {
